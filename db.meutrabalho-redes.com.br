@@ -1,0 +1,21 @@
+$TTL 1M
+@   IN  SOA dns01.meutrabalho.com.br. admin.meutrabalho.com.br. (
+        2025111202 ; Serial (aumente o número!)
+        1H          ; Refresh
+        15M         ; Retry
+        1W          ; Expire
+        1D )        ; Minimum TTL
+
+@       IN  NS      dns01.meutrabalho.com.br.
+
+; ---- Hosts ----
+dns01   IN  A   172.31.182.87
+app01   IN  A   172.31.182.88
+app02   IN  A   172.31.182.89
+app03   IN  A   172.31.182.90
+db01    IN  A   172.31.182.91
+
+; ---- Round-Robin WWW ----
+www     IN  A   172.31.182.88
+        IN  A   172.31.182.89
+        IN  A   172.31.182.90
