@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>{{ titulo }}</title>
+<style>
+body { font-family: Arial; margin: 40px; background: #fafafa; }
+.card { border: 1px solid #ccc; border-radius: 12px; padding: 20px; max-width: 620px; background: white; }
+a { color: #0366d6; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h2>{{ titulo }}</h2>
+  <p><strong>Servidor (hostname):</strong> {{ servidor }}</p>
+  <p><strong>Data/hora:</strong> {{ hora }}</p>
+  <p><small>Seu IP visto pelo servidor: {{ cliente }}</small></p>
+  <hr>
+  {% if user %}
+    <p>Logado como <strong>{{ user.full_name }}</strong> ({{ user.username }}) desde {{ user.login_at }}.</p>
+    <p><strong>ID da sessão:</strong> {{ sid }}</p>
+    <p><a href="{{ url_for('perfil') }}">Ir ao meu perfil</a> | <a href="{{ url_for('logout') }}">Sair</a></p>
+  {% else %}
+    <p><a href="{{ url_for('login') }}">Fazer login</a></p>
+  {% endif %}
+  <p style="margin-top:12px;color:#666">
+    Dica: abra várias abas ou limpe o cache DNS (chrome://net-internals/#dns) 
+    para ver o hostname mudar entre app01, app02 e app03.
+  </p>
+</div>
+</body>
+</html>
