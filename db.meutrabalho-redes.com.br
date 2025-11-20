@@ -9,13 +9,13 @@ $TTL 1M
 @       IN  NS      dns01.meutrabalho.com.br.
 
 ; ---- Hosts ----
-dns01   IN  A   172.31.182.87
-app01   IN  A   172.31.182.88
-app02   IN  A   172.31.182.89
-app03   IN  A   172.31.182.90
-db01    IN  A   172.31.182.91
+dns01   IN  A   192.168.0.45
+app01   IN  A   192.168.0.46
+app02   IN  A   192.168.0.47
+app03   IN  A   192.168.0.48
+db01    IN  A   192.168.0.49
 
 ; ---- Round-Robin WWW ----
-www     IN  A   172.31.182.88
-        IN  A   172.31.182.89
-        IN  A   172.31.182.90
+www     IN  A   192.168.0.46
+        IN  A   192.168.0.47
+        IN  A   192.168.0.48
